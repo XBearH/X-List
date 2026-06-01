@@ -1,4 +1,4 @@
-<<template>
+<template>
   <div class="app">
     <nav class="navbar">
       <router-link to="/" exact-active-class="active">今日</router-link>

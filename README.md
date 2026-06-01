@@ -29,3 +29,29 @@
 - [ ] 响应式布局优化
 
 ## 项目结构
+src/
+├── components/
+│   ├── common/         # 通用组件
+│   ├── student/        # 学生专属（考试倒计时）
+│   ├── worker/         # 社畜专属（快速标签）
+│   └── stats/          # 统计图表（Day 4 接入）
+├── views/
+│   ├── Today.vue       # 今日待办（双角色）
+│   ├── History.vue     # 历史记录（筛选+恢复）
+│   ├── WeeklyReport.vue# 周总结（数据统计）
+│   └── Settings.vue    # 设置（考试管理）
+├── stores/
+│   ├── todoStore.ts    # Todo 状态 + 持久化
+│   ├── userStore.ts    # 用户角色 + 考试数据
+│   └── statsStore.ts   # 周统计数据计算
+├── composables/        # 组合式逻辑复用
+├── utils/
+│   └── storage.ts      # localStorage 封装
+└── router/
+└── index.ts        # 路由配置
+
+
+## 本地运行
+```bash
+npm install
+npm run dev

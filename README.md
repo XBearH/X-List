@@ -29,6 +29,8 @@
 - [ ] 响应式布局优化
 
 ## 项目结构
+
+```text
 src/
 ├── components/
 │   ├── common/         # 通用组件
@@ -48,7 +50,7 @@ src/
 ├── utils/
 │   └── storage.ts      # localStorage 封装
 └── router/
-└── index.ts        # 路由配置
+    └── index.ts        # 路由配置
 
 
 ## 本地运行

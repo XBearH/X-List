@@ -1,4 +1,4 @@
-<<template>
+<template>
   <div class="weekly-page">
     <h1>周总结</h1>
 

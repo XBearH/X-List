@@ -1,4 +1,4 @@
-<<template>
+<template>
   <div ref="chartRef" class="chart-container"></div>
 </template>
 
@@ -8,7 +8,7 @@ import * as echarts from 'echarts'
 import { useStatsStore } from '../../stores/statsStore'
 
 const statsStore = useStatsStore()
-const chartRef = ref<<HTMLDivElement>()
+const chartRef = ref<HTMLDivElement>()
 let chart: echarts.ECharts | null = null
 
 const initChart = () => {

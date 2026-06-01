@@ -71,12 +71,24 @@
       </div>
     </div>
 
-    <div class="section">
-      <h3>📊 图表可视化</h3>
-      <div class="chart-placeholder">
-        <div class="placeholder-text">
-          ECharts 图表区域<br />
-          <small>Day 4 接入柱状图 + 饼图</small>
+        <div class="section">
+      <h3>📊 本周完成趋势</h3>
+      <div class="chart-card">
+        <WeeklyChart />
+      </div>
+    </div>
+
+    <div class="section charts-row">
+      <div class="chart-col">
+        <h3>⏰ 时段分布</h3>
+        <div class="chart-card">
+          <HourChart />
+        </div>
+      </div>
+      <div class="chart-col">
+        <h3>🎭 角色占比</h3>
+        <div class="chart-card">
+          <RoleChart />
         </div>
       </div>
     </div>
@@ -87,6 +99,9 @@
 import { computed } from 'vue'
 import { useTodoStore } from '../stores/todoStore'
 import { useStatsStore } from '../stores/statsStore'
+import WeeklyChart from '../components/stats/WeeklyChart.vue'
+import HourChart from '../components/stats/HourChart.vue'
+import RoleChart from '../components/stats/RoleChart.vue'
 
 const todoStore = useTodoStore()
 const statsStore = useStatsStore()
@@ -237,5 +252,21 @@ const completionRate = computed(() => {
 @media (max-width: 640px) {
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
   .time-grid { grid-template-columns: repeat(2, 1fr); }
+}
+.charts-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.chart-card {
+  background: white;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+@media (max-width: 640px) {
+  .charts-row {
+    grid-template-columns: 1fr;
+  }
 }
 </style>

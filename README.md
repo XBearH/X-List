@@ -10,38 +10,36 @@
 - Vue Router 4
 - Element Plus / Dayjs / ECharts
 
-## 功能模块
+## 功能亮点
 
-### 已完成
-- [x] 项目脚手架与工程化配置（Vite + TS）
-- [x] 基础路由与导航布局（4 页面结构）
-- [x] Pinia 状态管理 + localStorage 数据持久化（刷新不丢失）
-- [x] Todo 增删改查与状态切换
-- [x] **学生/社畜双角色切换**与数据隔离
-- [x] **学生模式**：考试倒计时卡片 + 考试管理（设置页增删）
-- [x] **社畜模式**：快速标签栏（一键添加常用工作项）
-- [x] **历史记录**：按日期分组时间轴、角色/时间范围筛选、一键恢复
-- [x] **周总结**：本周完成统计、每日进度条、完成时段分布
-- [x] **数据可视化**：ECharts 柱状图（周趋势）+ 环形图（时段）+ 饼图（角色占比）
+### 双角色场景设计
+- **学生模式**：考试倒计时卡片 + 学习任务管理
+- **社畜模式**：快速标签栏（日报/周会/Review）+ 工作任务管理
+- 角色数据完全隔离，切换上下文自动变更
 
-### 开发中
-- [ ] 任务优先级与标签筛选
-- [ ] 响应式布局全面适配
-- [ ] 项目截图与 GIF 演示
+### 数据可视化
+- ECharts 柱状图：本周每日完成趋势
+- ECharts 环形图：任务完成时段分布（上午/下午/晚上/凌晨）
+- ECharts 饼图：学习 vs 工作占比
+
+### 工程化实践
+- Pinia + localStorage 数据持久化，刷新不丢失
+- 遵循 Conventional Commits 规范，Git 历史清晰可追溯
+- 响应式布局，支持移动端访问
 
 ## 项目结构
 
 ```text
 src/
 ├── components/
-│   ├── common/         # 通用组件
-│   ├── student/        # 学生专属（考试倒计时）
-│   ├── worker/         # 社畜专属（快速标签）
-│   └── stats/          # 统计图表（Day 4 接入）
+│   ├── common/         # 通用组件（EmptyState）
+│   ├── student/        # 学生专属（ExamCountdown）
+│   ├── worker/         # 社畜专属（QuickTags）
+│   └── stats/          # 统计图表（ECharts）
 ├── views/
 │   ├── Today.vue       # 今日待办（双角色）
 │   ├── History.vue     # 历史记录（筛选+恢复）
-│   ├── WeeklyReport.vue# 周总结（数据统计）
+│   ├── WeeklyReport.vue# 周总结（数据统计+可视化）
 │   └── Settings.vue    # 设置（考试管理）
 ├── stores/
 │   ├── todoStore.ts    # Todo 状态 + 持久化
@@ -51,7 +49,7 @@ src/
 ├── utils/
 │   └── storage.ts      # localStorage 封装
 └── router/
-    └── index.ts        # 路由配置
+    └── index.ts        # 路由配置  └── index.ts        # 路由配置
 
 
 ## 本地运行

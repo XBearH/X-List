@@ -7,8 +7,12 @@
       <router-link to="/settings" active-class="active">设置</router-link>
     </nav>
     <main class="main-content">
-      <router-view />
-    </main>
+  <router-view v-slot="{ Component }">
+    <transition name="fade" mode="out-in">
+      <component :is="Component" />
+    </transition>
+  </router-view>
+</main>
   </div>
 </template>
 
@@ -21,4 +25,12 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
 .navbar a:hover { color: #409eff; }
 .navbar a.active { background: #409eff; color: white; }
 .main-content { padding: 20px; }
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.2s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
 </style>

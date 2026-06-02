@@ -95,6 +95,13 @@
   </div>
 </template>
 
+<EmptyState
+  v-if="statsStore.weeklyTotal === 0"
+  icon="📊"
+  title="本周还没有完成任何任务"
+  description="去今日页面完成第一个任务，图表就会显示数据"
+/>
+
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useTodoStore } from '../stores/todoStore'

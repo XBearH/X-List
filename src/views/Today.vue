@@ -47,9 +47,12 @@
         <span class="title">{{ todo.title }}</span>
         <span class="role-tag">{{ todo.role }}</span>
       </div>
-      <div v-if="filteredTodos.length === 0" class="empty">
-        暂无任务，添加一个吧！
-      </div>
+      <EmptyState
+  v-if="filteredTodos.length === 0"
+  :icon="userStore.currentRole === 'student' ? '📚' : '💼'"
+  :title="userStore.currentRole === 'student' ? '暂无学习任务' : '暂无工作任务'"
+  :description="'输入上方添加新任务，或点击快速标签'"
+/>
     </div>
   </div>
 </template>
@@ -60,6 +63,7 @@ import { useTodoStore } from '../stores/todoStore'
 import { useUserStore } from '../stores/userStore'
 import ExamCountdown from '../components/student/ExamCountdown.vue'
 import QuickTags from '../components/worker/QuickTags.vue'
+import EmptyState from '../components/common/EmptyState.vue'
 
 const todoStore = useTodoStore()
 const userStore = useUserStore()

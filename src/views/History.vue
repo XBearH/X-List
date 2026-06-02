@@ -24,10 +24,12 @@
       </div>
     </div>
 
-    <div v-if="groupedHistory.length === 0" class="empty-state">
-      <div class="empty-icon">📜</div>
-      <p>暂无历史记录</p>
-    </div>
+    <EmptyState
+  v-if="groupedHistory.length === 0"
+  icon="📜"
+  title="暂无历史记录"
+  description="完成的任务会出现在这里，快去今日页面完成几个吧"
+/>
 
     <div v-else class="timeline">
       <div v-for="group in groupedHistory" :key="group.date" class="date-group">

@@ -1,4 +1,4 @@
-# X-TodoList
+# X-List
 
 基于 Vue3 + TypeScript + Vite 的角色化任务管理系统，支持学生/社畜双模式，集成周总结数据可视化与历史记录回溯。
 
